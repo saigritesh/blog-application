@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+
+<h1>Welcome to the Blog</h1>
+<a href="/new">Create new Post</a>
+<ul>
+    <% if(posts && posts.length>0){ %>
+        
+        <% posts.forEach((post,index) =>{ %>
+            <li>
+            <h2><a href="/posts/<%= index %>"><%= post.title %></a></h2>
+            </li>
+        <% }) %>
+    <%} else {%>
+        <p>No Posts yet!</p>
+    <%}%>
+</ul>
+
+</body>
+</html>
